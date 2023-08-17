@@ -1,0 +1,32 @@
+programa
+{
+	inclua biblioteca Matematica --> m
+	
+	funcao inicio()
+	{
+		escreva("\nCUSTO DA VIAGEM\n")
+
+		real distancia, capacidade_tanque
+		real km_por_litro, autonomia, custo_tanque_cheio 
+		real preco_combustivel, custo_viagem, quantos_tanques
+
+		escreva("\nInforme a distancia em km até o destino:")
+		leia(distancia)
+		escreva("\nQual a capacidade do tanque? ")
+		leia(capacidade_tanque)
+		escreva("\nQuantos km por litro o carro percorre: ")
+		leia(km_por_litro)
+		
+		autonomia = capacidade_tanque * km_por_litro
+		quantos_tanques = (distancia / autonomia) 
+
+		escreva("\nQual o preço do combustível: ")
+		leia(preco_combustivel)
+          
+          custo_tanque_cheio = capacidade_tanque * preco_combustivel
+          
+          custo_viagem   =  m.arredondar(custo_tanque_cheio * quantos_tanques, 2)
+          
+		escreva("\nCusto total da viagem em combustível em reais: ", m.arredondar(custo_viagem,2 ))
+	}
+}
